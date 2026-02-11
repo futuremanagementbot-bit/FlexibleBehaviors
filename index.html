@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexible Behaviors</title>
+    
+    <!-- Google Fonts: Nunito (Primary) & Lora (Accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              deepForest: '#2E4A3E',
+              warmSage: '#7A9E7E',
+              softFern: '#A8C5A0',
+              sand: '#D4C5A9',
+              cream: '#F5F0E8',
+              softWhite: '#FAFAF7',
+              clay: '#B8845C',
+              terracotta: '#C4734F',
+              mutedGold: '#C9A96E',
+              charcoal: '#3A3A3A',
+            },
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+              serif: ['Lora', 'serif'],
+            },
+            boxShadow: {
+              'soft-sm': '0 2px 8px rgba(46, 74, 62, 0.06)',
+              'soft-md': '0 4px 16px rgba(46, 74, 62, 0.08)',
+              'soft-lg': '0 8px 32px rgba(46, 74, 62, 0.10)',
+              'soft-hover': '0 12px 24px rgba(46, 74, 62, 0.15)',
+            },
+            borderRadius: {
+              'card': '12px',
+              'button': '8px',
+              'hero': '16px',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F5F0E8; /* Cream */
+        color: #3A3A3A; /* Charcoal */
+        font-family: 'Nunito', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Custom scrollbar for a softer feel */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F5F0E8; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D4C5A9; 
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #7A9E7E; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.34.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
