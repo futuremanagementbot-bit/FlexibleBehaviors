@@ -1,0 +1,81 @@
+<!-- Header / Navigation Section -->
+<header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <!-- Logo -->
+    <a href="/" class="site-header__logo-text" aria-label="Flexible Behaviors — Home">
+      {%- if section.settings.logo -%}
+        <img
+          src="{{ section.settings.logo | image_url: width: 200 }}"
+          alt="{{ shop.name }}"
+          class="site-header__logo"
+          width="200"
+          height="40"
+          loading="eager"
+        >
+      {%- else -%}
+        Flexible Behaviors
+      {%- endif -%}
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav aria-label="Main navigation" role="navigation">
+      <ul class="site-nav">
+        <li class="site-nav__dropdown-wrap">
+          <a href="/collections" class="site-nav__link" aria-haspopup="true" aria-expanded="false">
+            Shop
+            {% render 'icon', name: 'chevron-down' %}
+          </a>
+          <ul class="site-nav__dropdown" role="menu">
+            <li role="menuitem"><a href="/collections">All Products</a></li>
+            <li role="menuitem"><a href="/collections/visual-supports-printables">Visual Supports & Printables</a></li>
+            <li role="menuitem"><a href="/collections/token-boards-reinforcement">Token Boards & Reinforcement</a></li>
+            <li role="menuitem"><a href="/collections/sensory-tools-fidgets">Sensory Tools & Fidgets</a></li>
+            <li role="menuitem"><a href="/collections/data-collection-provider-tools">Data Collection & Provider Tools</a></li>
+            <li role="menuitem"><a href="/collections/kits-bundles">Kits & Bundles</a></li>
+            <li role="menuitem"><a href="/collections/sale">Sale</a></li>
+          </ul>
+        </li>
+        <li><a href="/pages/about" class="site-nav__link">About</a></li>
+        <li><a href="/blogs/resources" class="site-nav__link">Blog</a></li>
+        <li><a href="/pages/faq" class="site-nav__link">FAQ</a></li>
+        <li><a href="/pages/contact" class="site-nav__link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Icons -->
+    <div class="site-header__icons">
+      <button class="site-header__icon-btn" aria-label="Search" type="button">
+        {% render 'icon', name: 'search' %}
+      </button>
+
+      <a href="/account" class="site-header__icon-btn" aria-label="Account">
+        {% render 'icon', name: 'user' %}
+      </a>
+
+      <a href="/cart" class="site-header__icon-btn" aria-label="Cart ({{ cart.item_count }} items)" style="position: relative;">
+        {% render 'icon', name: 'cart' %}
+        {%- if cart.item_count > 0 -%}
+          <span class="site-header__cart-count" aria-hidden="true">{{ cart.item_count }}</span>
+        {%- endif -%}
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <button class="site-header__icon-btn site-header__menu-toggle" id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" type="button">
+        {% render 'icon', name: 'menu' %}
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,11 @@
+{%- comment -%}
+  Section Header snippet
+  Usage: {% render 'section-header', title: 'Heading', subtitle: 'Optional subtitle' %}
+{%- endcomment -%}
+
+<div class="section-header fade-in-up">
+  <h2>{{ title }}</h2>
+  {%- if subtitle and subtitle != blank -%}
+    <p>{{ subtitle }}</p>
+  {%- endif -%}
+</div>

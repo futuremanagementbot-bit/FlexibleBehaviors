@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible Behaviors — Local Preview</title>
+  <meta name="description" content="Affordable, practical tools for parents and providers supporting individuals with special needs.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Lora:ital@1&display=swap" rel="stylesheet">
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/flexible-behaviors.css">
+
+  <style>
+    /* Preview placeholder images */
+    .preview-placeholder {
+      background: linear-gradient(135deg, var(--color-warm-sage) 0%, var(--color-soft-fern) 50%, var(--color-sand) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-cream);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-align: center;
+      padding: 1rem;
+    }
+    .hero .preview-placeholder {
+      position: absolute;
+      inset: 0;
+      opacity: 0.6;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Skip to content -->
+  <a class="skip-to-content" href="#main-content">Skip to content</a>
+
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <p>Free shipping on orders over $35</p>
+    <button class="announcement-bar__close" aria-label="Dismiss announcement">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" role="banner">
+    <div class="site-header__inner">
+      <a href="#" class="site-header__logo-text" aria-label="Flexible Behaviors — Home">
+        Flexible Behaviors
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="site-nav">
+          <li class="site-nav__dropdown-wrap">
+            <a href="#" class="site-nav__link" aria-haspopup="true">
+              Shop
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="site-nav__dropdown" role="menu">
+              <li role="menuitem"><a href="#">All Products</a></li>
+              <li role="menuitem"><a href="#">Visual Supports & Printables</a></li>
+              <li role="menuitem"><a href="#">Token Boards & Reinforcement</a></li>
+              <li role="menuitem"><a href="#">Sensory Tools & Fidgets</a></li>
+              <li role="menuitem"><a href="#">Data Collection & Provider Tools</a></li>
+              <li role="menuitem"><a href="#">Curated Kits & Bundles</a></li>
+              <li role="menuitem"><a href="#">Sale</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="site-nav__link">About</a></li>
+          <li><a href="#" class="site-nav__link">Blog</a></li>
+          <li><a href="#" class="site-nav__link">FAQ</a></li>
+          <li><a href="#" class="site-nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__icons">
+        <button class="site-header__icon-btn" aria-label="Search" type="button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="#" class="site-header__icon-btn" aria-label="Account">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="#" class="site-header__icon-btn" aria-label="Cart (0 items)" style="position: relative;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="site-header__cart-count" aria-hidden="true">2</span>
+        </a>
+        <button class="site-header__icon-btn site-header__menu-toggle" id="mobile-menu-toggle" aria-label="Open menu" type="button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-nav__overlay" id="mobile-nav-overlay" aria-hidden="true"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <button class="mobile-nav__close" id="mobile-nav-close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <ul class="mobile-nav__list">
+      <li><a class="mobile-nav__link" href="#">Shop</a></li>
+      <li><a class="mobile-nav__link" href="#">Visual Supports</a></li>
+      <li><a class="mobile-nav__link" href="#">Token Boards</a></li>
+      <li><a class="mobile-nav__link" href="#">Sensory Tools</a></li>
+      <li><a class="mobile-nav__link" href="#">Provider Tools</a></li>
+      <li><a class="mobile-nav__link" href="#">About</a></li>
+      <li><a class="mobile-nav__link" href="#">Blog</a></li>
+      <li><a class="mobile-nav__link" href="#">FAQ</a></li>
+      <li><a class="mobile-nav__link" href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content" role="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Hero banner">
+      <div class="preview-placeholder">
+        Upload your hero image in<br>Theme Editor → Hero Banner
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">Tools for every milestone.</h1>
+        <p class="hero__subtitle">Affordable, practical support for parents and providers who show up every day.</p>
+        <a href="#" class="btn btn-primary">Explore Our Tools</a>
+      </div>
+    </section>
+
+    <!-- ===== TRUST BAR ===== -->
+    <section class="section section--white" aria-label="Our promises">
+      <div class="container">
+        <div class="trust-bar">
+          <div class="trust-bar__item fade-in-up" data-delay="1">
+            <div class="trust-bar__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <span class="trust-bar__text">Free shipping on orders over $35</span>
+          </div>
+          <div class="trust-bar__item fade-in-up" data-delay="2">
+            <div class="trust-bar__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <span class="trust-bar__text">Made with (and for) the special needs community</span>
+          </div>
+          <div class="trust-bar__item fade-in-up" data-delay="3">
+            <div class="trust-bar__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <span class="trust-bar__text">Budget-friendly, always</span>
+          </div>
+          <div class="trust-bar__item fade-in-up" data-delay="4">
+            <div class="trust-bar__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <span class="trust-bar__text">Hassle-free returns</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CATEGORY GRID ===== -->
+    <section class="section section--cream" aria-label="Shop by category">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <h2>Shop by Category</h2>
+        </div>
+        <div class="category-grid">
+          <a href="#" class="category-card fade-in-up" data-delay="1">
+            <div class="preview-placeholder category-card__image" style="aspect-ratio: 4/3;">Visual Supports</div>
+            <div class="category-card__overlay">
+              <h3 class="category-card__title">Visual Supports & Printables</h3>
+              <p class="category-card__subtitle">Build routines, support transitions.</p>
+            </div>
+          </a>
+          <a href="#" class="category-card fade-in-up" data-delay="2">
+            <div class="preview-placeholder category-card__image" style="aspect-ratio: 4/3;">Token Boards</div>
+            <div class="category-card__overlay">
+              <h3 class="category-card__title">Token Boards & Reinforcement</h3>
+              <p class="category-card__subtitle">Make progress visible.</p>
+            </div>
+          </a>
+          <a href="#" class="category-card fade-in-up" data-delay="3">
+            <div class="preview-placeholder category-card__image" style="aspect-ratio: 4/3;">Sensory Tools</div>
+            <div class="category-card__overlay">
+              <h3 class="category-card__title">Sensory Tools & Fidgets</h3>
+              <p class="category-card__subtitle">The right tool at the right time.</p>
+            </div>
+          </a>
+          <a href="#" class="category-card fade-in-up" data-delay="4">
+            <div class="preview-placeholder category-card__image" style="aspect-ratio: 4/3;">Provider Tools</div>
+            <div class="category-card__overlay">
+              <h3 class="category-card__title">Data Collection & Provider Tools</h3>
+              <p class="category-card__subtitle">Track what matters.</p>
+            </div>
+          </a>
+          <a href="#" class="category-card fade-in-up" data-delay="5">
+            <div class="preview-placeholder category-card__image" style="aspect-ratio: 4/3;">Kits & Bundles</div>
+            <div class="category-card__overlay">
+              <h3 class="category-card__title">Curated Kits & Bundles</h3>
+              <p class="category-card__subtitle">Everything you need in one box.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS ===== -->
+    <section class="section section--white" aria-label="Featured products">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <h2>Our Most Popular Tools</h2>
+          <p>Trusted by parents and providers every day.</p>
+        </div>
+        <div class="product-grid">
+
+          <!-- Product Card 1 -->
+          <article class="product-card fade-in-up" data-delay="1">
+            <div class="product-card__image-wrap">
+              <span class="product-card__badge product-card__badge--new">New</span>
+              <div class="preview-placeholder" style="aspect-ratio: 1/1;">Product Image</div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title"><a href="#">Morning Routine Visual Schedule</a></h3>
+              <div class="product-card__price">$8.99</div>
+              <div class="product-card__action">
+                <button class="btn btn-primary btn-sm">Add to Toolkit</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 2 -->
+          <article class="product-card fade-in-up" data-delay="2">
+            <div class="product-card__image-wrap">
+              <span class="product-card__badge product-card__badge--sale">Sale</span>
+              <div class="preview-placeholder" style="aspect-ratio: 1/1;">Product Image</div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title"><a href="#">Token Board Starter Kit</a></h3>
+              <div class="product-card__price">$12.99 <span class="product-card__price--compare">$16.99</span></div>
+              <div class="product-card__action">
+                <button class="btn btn-primary btn-sm">Add to Toolkit</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 3 -->
+          <article class="product-card fade-in-up" data-delay="3">
+            <div class="product-card__image-wrap">
+              <div class="preview-placeholder" style="aspect-ratio: 1/1;">Product Image</div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title"><a href="#">Sensory Fidget Toolkit</a></h3>
+              <div class="product-card__price">$24.99</div>
+              <div class="product-card__action">
+                <button class="btn btn-primary btn-sm">Add to Toolkit</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Product Card 4 -->
+          <article class="product-card fade-in-up" data-delay="4">
+            <div class="product-card__image-wrap">
+              <div class="preview-placeholder" style="aspect-ratio: 1/1;">Product Image</div>
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__title"><a href="#">ABC Data Sheet Printable Pack</a></h3>
+              <div class="product-card__price">$6.99</div>
+              <div class="product-card__action">
+                <button class="btn btn-primary btn-sm">Add to Toolkit</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <div class="text-center mt-lg">
+          <a href="#" class="btn btn-secondary">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT / MISSION ===== -->
+    <section class="section section--white" aria-label="About Flexible Behaviors">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-split__image fade-in-up">
+            <div class="preview-placeholder" style="aspect-ratio: 4/3; border-radius: var(--radius-lg);">About Image</div>
+          </div>
+          <div class="about-split__content fade-in-up" data-delay="2">
+            <h2>Why Flexible Behaviors?</h2>
+            <p>We named this brand "Flexible" for a reason. Real progress doesn't come from rigid plans or perfect days — it comes from meeting the moment, holding onto what matters most, and taking the next step.</p>
+            <p>We build tools for that kind of work. Affordable, practical, and designed to move with you — not against you.</p>
+            <a href="#" class="btn btn-secondary">Read Our Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section section--cream" aria-label="Customer testimonials">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <h2>What Our Community Says</h2>
+        </div>
+        <div class="testimonial-grid">
+
+          <div class="testimonial-card fade-in-up" data-delay="1">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote class="testimonial-card__quote">
+              These tools have changed our daily routine. Finally something affordable that actually works.
+            </blockquote>
+            <div>
+              <cite class="testimonial-card__author">Sarah M.</cite>
+              <p class="testimonial-card__role">BCBA</p>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in-up" data-delay="2">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote class="testimonial-card__quote">
+              As a parent, I was overwhelmed by how expensive everything was. Flexible Behaviors made it possible.
+            </blockquote>
+            <div>
+              <cite class="testimonial-card__author">James R.</cite>
+              <p class="testimonial-card__role">Parent</p>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in-up" data-delay="3">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <blockquote class="testimonial-card__quote">
+              The quality is amazing and the price point is perfect for our clinic. We've ordered for all our therapists.
+            </blockquote>
+            <div>
+              <cite class="testimonial-card__author">Dr. Kim L.</cite>
+              <p class="testimonial-card__role">Clinical Director</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="section section--dark" aria-label="Newsletter signup">
+      <div class="container text-center">
+        <div class="fade-in-up">
+          <h2>Join the Toolkit</h2>
+          <p style="max-width: 50ch; margin: var(--space-xs) auto var(--space-lg);">
+            Get free resources, new product drops, and practical tips delivered to your inbox. Plus 10% off your first order.
+          </p>
+          <div class="newsletter-form">
+            <div class="form-group" style="flex: 1;">
+              <label for="newsletter-email" class="form-label--sr-only">Email address</label>
+              <input type="email" id="newsletter-email" class="form-input" placeholder="your@email.com" autocomplete="email" required aria-label="Email address">
+            </div>
+            <button type="button" class="btn btn-cta">Join Us</button>
+          </div>
+          <p class="newsletter__fine-print">We respect your inbox. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-column">
+          <h4 class="footer-column__title">Shop</h4>
+          <ul class="footer-column__list">
+            <li><a href="#">All Products</a></li>
+            <li><a href="#">Visual Supports</a></li>
+            <li><a href="#">Token Boards</a></li>
+            <li><a href="#">Sensory Tools</a></li>
+            <li><a href="#">Provider Tools</a></li>
+            <li><a href="#">Kits & Bundles</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column__title">Help</h4>
+          <ul class="footer-column__list">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-column__title">Connect</h4>
+          <ul class="footer-column__list">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-bottom__tagline">Tools for every milestone. Support for every journey.</p>
+        <div class="footer-bottom__social" aria-label="Social media links">
+          <a href="#" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Email us">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+        <p class="footer-bottom__copy">&copy; 2026 Flexible Behaviors. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation + Mobile Nav JS -->
+  <script>
+    (function() {
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in-up').forEach(function(el) { observer.observe(el); });
+      } else {
+        document.querySelectorAll('.fade-in-up').forEach(function(el) { el.classList.add('is-visible'); });
+      }
+
+      // Mobile nav
+      var toggle = document.getElementById('mobile-menu-toggle');
+      var nav = document.getElementById('mobile-nav');
+      var overlay = document.getElementById('mobile-nav-overlay');
+      var close = document.getElementById('mobile-nav-close');
+      function open() { nav.classList.add('is-open'); overlay.classList.add('is-open'); document.body.style.overflow='hidden'; }
+      function shut() { nav.classList.remove('is-open'); overlay.classList.remove('is-open'); document.body.style.overflow=''; }
+      if(toggle) toggle.addEventListener('click', open);
+      if(close) close.addEventListener('click', shut);
+      if(overlay) overlay.addEventListener('click', shut);
+      document.addEventListener('keydown', function(e) { if(e.key==='Escape' && nav.classList.contains('is-open')) { shut(); toggle.focus(); } });
+
+      // Announcement dismiss
+      var annClose = document.querySelector('.announcement-bar__close');
+      if(annClose) annClose.addEventListener('click', function() { document.querySelector('.announcement-bar').style.display='none'; });
+    })();
+  </script>
+</body>
+</html>

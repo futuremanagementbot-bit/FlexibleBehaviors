@@ -1,0 +1,8 @@
+# Shopify Theme
+node_modules/
+.shopify/
+config/settings_data.json
+assets/*.map
+preview.html
+.DS_Store
+Thumbs.db

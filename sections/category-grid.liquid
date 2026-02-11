@@ -1,0 +1,96 @@
+<!-- Category Grid Section -->
+<section class="section section--cream" aria-label="Shop by category">
+  <div class="container">
+    {% render 'section-header',
+      title: section.settings.heading,
+      subtitle: section.settings.subheading
+    %}
+
+    <div class="category-grid">
+      {%- for block in section.blocks -%}
+        <a href="{{ block.settings.link | default: '#' }}" class="category-card fade-in-up" data-delay="{{ forloop.index }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.image -%}
+            <img
+              class="category-card__image"
+              src="{{ block.settings.image | image_url: width: 600 }}"
+              alt="{{ block.settings.title | escape }}"
+              width="600"
+              height="450"
+              loading="lazy"
+            >
+          {%- else -%}
+            <div class="skeleton skeleton--image" style="aspect-ratio: 4/3;"></div>
+          {%- endif -%}
+
+          <div class="category-card__overlay">
+            <h3 class="category-card__title">{{ block.settings.title }}</h3>
+            {%- if block.settings.subtitle != blank -%}
+              <p class="category-card__subtitle">{{ block.settings.subtitle }}</p>
+            {%- endif -%}
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Category Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "Shop by Category"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Section subheading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category title",
+          "default": "Category Name"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Short description"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Category link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Category Grid",
+      "blocks": [
+        { "type": "category", "settings": { "title": "Visual Supports & Printables" } },
+        { "type": "category", "settings": { "title": "Token Boards & Reinforcement" } },
+        { "type": "category", "settings": { "title": "Sensory Tools & Fidgets" } },
+        { "type": "category", "settings": { "title": "Data Collection & Provider Tools" } },
+        { "type": "category", "settings": { "title": "Curated Kits & Bundles" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

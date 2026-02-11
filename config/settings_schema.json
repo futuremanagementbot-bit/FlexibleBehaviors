@@ -1,0 +1,142 @@
+[
+    {
+        "name": "theme_info",
+        "theme_name": "Flexible Behaviors",
+        "theme_author": "Flexible Behaviors",
+        "theme_version": "1.0.0",
+        "theme_documentation_url": "",
+        "theme_support_url": ""
+    },
+    {
+        "name": "Colors",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Primary Colors"
+            },
+            {
+                "type": "color",
+                "id": "color_deep_forest",
+                "label": "Deep Forest (primary)",
+                "default": "#2E4A3E"
+            },
+            {
+                "type": "color",
+                "id": "color_warm_sage",
+                "label": "Warm Sage (secondary)",
+                "default": "#7A9E7E"
+            },
+            {
+                "type": "color",
+                "id": "color_soft_fern",
+                "label": "Soft Fern (accent green)",
+                "default": "#A8C5A0"
+            },
+            {
+                "type": "header",
+                "content": "Neutrals"
+            },
+            {
+                "type": "color",
+                "id": "color_cream",
+                "label": "Cream (background)",
+                "default": "#F5F0E8"
+            },
+            {
+                "type": "color",
+                "id": "color_soft_white",
+                "label": "Soft White (alt background)",
+                "default": "#FAFAF7"
+            },
+            {
+                "type": "color",
+                "id": "color_sand",
+                "label": "Sand (borders/dividers)",
+                "default": "#D4C5A9"
+            },
+            {
+                "type": "color",
+                "id": "color_charcoal",
+                "label": "Charcoal (body text)",
+                "default": "#3A3A3A",
+                "info": "Never use pure black — charcoal is softer and warmer."
+            },
+            {
+                "type": "header",
+                "content": "Accents"
+            },
+            {
+                "type": "color",
+                "id": "color_clay",
+                "label": "Clay (warm CTA)",
+                "default": "#B8845C"
+            },
+            {
+                "type": "color",
+                "id": "color_terracotta",
+                "label": "Terracotta (sale/urgent CTA)",
+                "default": "#C4734F"
+            },
+            {
+                "type": "color",
+                "id": "color_muted_gold",
+                "label": "Muted Gold (highlights/stars)",
+                "default": "#C9A96E"
+            }
+        ]
+    },
+    {
+        "name": "Typography",
+        "settings": [
+            {
+                "type": "font_picker",
+                "id": "heading_font",
+                "label": "Heading font",
+                "default": "nunito_n7"
+            },
+            {
+                "type": "font_picker",
+                "id": "body_font",
+                "label": "Body font",
+                "default": "nunito_n4"
+            }
+        ]
+    },
+    {
+        "name": "Favicon",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "favicon",
+                "label": "Favicon",
+                "info": "Upload a 32x32px icon. Use the brand icon on Deep Forest or transparent background."
+            }
+        ]
+    },
+    {
+        "name": "Social Media",
+        "settings": [
+            {
+                "type": "url",
+                "id": "social_instagram",
+                "label": "Instagram URL"
+            },
+            {
+                "type": "url",
+                "id": "social_facebook",
+                "label": "Facebook URL"
+            },
+            {
+                "type": "url",
+                "id": "social_pinterest",
+                "label": "Pinterest URL"
+            },
+            {
+                "type": "text",
+                "id": "social_email",
+                "label": "Contact email",
+                "default": "hello@flexiblebehaviors.com"
+            }
+        ]
+    }
+]

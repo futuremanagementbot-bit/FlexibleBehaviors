@@ -1,0 +1,26 @@
+<!-- Announcement Bar Section -->
+<div class="announcement-bar" role="region" aria-label="Announcement">
+  <p>{{ section.settings.text | default: 'Free shipping on orders over $35' }}</p>
+  <button class="announcement-bar__close" aria-label="Dismiss announcement">
+    {% render 'icon', name: 'close' %}
+  </button>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement text",
+      "default": "Free shipping on orders over $35"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Optional link"
+    }
+  ]
+}
+{% endschema %}

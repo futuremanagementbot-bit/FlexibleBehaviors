@@ -1,0 +1,152 @@
+{
+    "sections": {
+        "announcement-bar": {
+            "type": "announcement-bar",
+            "settings": {
+                "text": "Free shipping on orders over $35"
+            }
+        },
+        "hero-banner": {
+            "type": "hero-banner",
+            "settings": {
+                "heading": "Tools for every milestone.",
+                "subheading": "Affordable, practical support for parents and providers who show up every day.",
+                "cta_text": "Explore Our Tools",
+                "cta_link": "/collections"
+            }
+        },
+        "trust-bar": {
+            "type": "trust-bar",
+            "settings": {}
+        },
+        "category-grid": {
+            "type": "category-grid",
+            "settings": {
+                "heading": "Shop by Category"
+            },
+            "blocks": {
+                "cat-1": {
+                    "type": "category",
+                    "settings": {
+                        "title": "Visual Supports & Printables",
+                        "subtitle": "Build routines, support transitions.",
+                        "link": "/collections/visual-supports-printables"
+                    }
+                },
+                "cat-2": {
+                    "type": "category",
+                    "settings": {
+                        "title": "Token Boards & Reinforcement",
+                        "subtitle": "Make progress visible.",
+                        "link": "/collections/token-boards-reinforcement"
+                    }
+                },
+                "cat-3": {
+                    "type": "category",
+                    "settings": {
+                        "title": "Sensory Tools & Fidgets",
+                        "subtitle": "The right tool at the right time.",
+                        "link": "/collections/sensory-tools-fidgets"
+                    }
+                },
+                "cat-4": {
+                    "type": "category",
+                    "settings": {
+                        "title": "Data Collection & Provider Tools",
+                        "subtitle": "Track what matters.",
+                        "link": "/collections/data-collection-provider-tools"
+                    }
+                },
+                "cat-5": {
+                    "type": "category",
+                    "settings": {
+                        "title": "Curated Kits & Bundles",
+                        "subtitle": "Everything you need in one box.",
+                        "link": "/collections/kits-bundles"
+                    }
+                }
+            },
+            "block_order": [
+                "cat-1",
+                "cat-2",
+                "cat-3",
+                "cat-4",
+                "cat-5"
+            ]
+        },
+        "featured-products": {
+            "type": "featured-products",
+            "settings": {
+                "heading": "Our Most Popular Tools",
+                "subheading": "Trusted by parents and providers every day.",
+                "product_count": 8,
+                "show_view_all": true
+            }
+        },
+        "about-section": {
+            "type": "about-section",
+            "settings": {
+                "heading": "Why Flexible Behaviors?",
+                "cta_text": "Read Our Story",
+                "cta_link": "/pages/about"
+            }
+        },
+        "testimonials": {
+            "type": "testimonials",
+            "settings": {
+                "heading": "What Our Community Says"
+            },
+            "blocks": {
+                "test-1": {
+                    "type": "testimonial",
+                    "settings": {
+                        "quote": "These tools have changed our daily routine. Finally something affordable that actually works.",
+                        "author": "Sarah M.",
+                        "role": "BCBA",
+                        "rating": 5
+                    }
+                },
+                "test-2": {
+                    "type": "testimonial",
+                    "settings": {
+                        "quote": "As a parent, I was overwhelmed by how expensive everything was. Flexible Behaviors made it possible.",
+                        "author": "James R.",
+                        "role": "Parent",
+                        "rating": 5
+                    }
+                },
+                "test-3": {
+                    "type": "testimonial",
+                    "settings": {
+                        "quote": "The quality is amazing and the price point is perfect for our clinic. We've ordered for all our therapists.",
+                        "author": "Dr. Kim L.",
+                        "role": "Clinical Director",
+                        "rating": 5
+                    }
+                }
+            },
+            "block_order": [
+                "test-1",
+                "test-2",
+                "test-3"
+            ]
+        },
+        "newsletter": {
+            "type": "newsletter",
+            "settings": {
+                "heading": "Join the Toolkit",
+                "body": "Get free resources, new product drops, and practical tips delivered to your inbox. Plus 10% off your first order.",
+                "cta_text": "Join Us"
+            }
+        }
+    },
+    "order": [
+        "hero-banner",
+        "trust-bar",
+        "category-grid",
+        "featured-products",
+        "about-section",
+        "testimonials",
+        "newsletter"
+    ]
+}

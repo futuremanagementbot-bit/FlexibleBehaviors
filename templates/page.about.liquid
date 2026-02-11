@@ -1,0 +1,33 @@
+<!-- About Page Template -->
+<section class="section section--cream">
+  <div class="container">
+    <!-- Page Hero -->
+    <div class="section-header fade-in-up" style="margin-bottom: var(--space-xl);">
+      <h1>{{ page.title | default: 'Our Story' }}</h1>
+    </div>
+
+    <!-- About Content -->
+    <div class="about-split fade-in-up">
+      <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); background: var(--color-soft-white);">
+        <div class="skeleton skeleton--image" style="aspect-ratio: 4/3;"></div>
+      </div>
+
+      <div class="about-split__content">
+        {%- if page.content != blank -%}
+          {{ page.content }}
+        {%- else -%}
+          <h2>Why Flexible Behaviors?</h2>
+          <p>We named this brand "Flexible" for a reason. Real progress doesn't come from rigid plans or perfect days — it comes from meeting the moment, holding onto what matters most, and taking the next step.</p>
+          <p>We build tools for that kind of work. Affordable, practical, and designed to move with you — not against you.</p>
+          <h3>Who We Serve</h3>
+          <p>Parents, BCBAs, RBTs, SLPs, OTs, and everyone supporting individuals with special needs. We believe the people doing the hardest, most important work deserve tools that actually work — and that they can actually afford.</p>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-lg fade-in-up">
+      <a href="/collections" class="btn btn-primary">Explore Our Tools</a>
+    </div>
+  </div>
+</section>

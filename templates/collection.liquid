@@ -1,0 +1,78 @@
+<!-- Collection Page Template -->
+{%- paginate collection.products by 12 -%}
+
+<section class="section section--cream">
+  <div class="container">
+
+    <!-- Collection Header -->
+    <div class="section-header fade-in-up">
+      <h1>{{ collection.title }}</h1>
+      {%- if collection.description != blank -%}
+        <p>{{ collection.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <!-- Sort & Filter Bar -->
+    <div class="collection-toolbar fade-in-up" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg); flex-wrap: wrap; gap: var(--space-sm);">
+      <p class="text-small" style="margin: 0;">
+        {{ collection.products_count }} {{ collection.products_count | pluralize: 'product', 'products' }}
+      </p>
+
+      <div class="form-group" style="flex-direction: row; align-items: center; gap: 0.5rem;">
+        <label for="sort-by" class="text-small" style="margin: 0; font-weight: 600;">Sort by:</label>
+        <select id="sort-by" class="form-input" style="padding: 0.5rem 0.75rem; font-size: 0.875rem; min-height: 36px;" onchange="window.location.href = this.value;">
+          {%- for option in collection.sort_options -%}
+            <option value="{{ option.url }}" {% if option.value == collection.sort_by %}selected{% endif %}>
+              {{ option.name }}
+            </option>
+          {%- endfor -%}
+        </select>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    {%- if collection.products.size > 0 -%}
+      <div class="product-grid">
+        {%- for product in collection.products -%}
+          {% render 'product-card', product: product, delay: forloop.index %}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="text-center" style="padding: var(--space-xl) 0;">
+        <h2>No products found</h2>
+        <p>Try browsing our other collections or searching for something specific.</p>
+        <a href="/collections" class="btn btn-primary mt-md">Browse All Products</a>
+      </div>
+    {%- endif -%}
+
+    <!-- Pagination -->
+    {%- if paginate.pages > 1 -%}
+      <nav class="pagination mt-lg" aria-label="Collection pagination" style="display: flex; justify-content: center; gap: var(--space-xs); flex-wrap: wrap;">
+        {%- if paginate.previous -%}
+          <a href="{{ paginate.previous.url }}" class="btn btn-secondary btn-sm" aria-label="Previous page">
+            {% render 'icon', name: 'arrow-left' %}
+            Previous
+          </a>
+        {%- endif -%}
+
+        {%- for part in paginate.parts -%}
+          {%- if part.is_link -%}
+            <a href="{{ part.url }}" class="btn btn-secondary btn-sm" aria-label="Page {{ part.title }}">{{ part.title }}</a>
+          {%- else -%}
+            <span class="btn btn-primary btn-sm" aria-current="page" aria-label="Current page, page {{ part.title }}">{{ part.title }}</span>
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if paginate.next -%}
+          <a href="{{ paginate.next.url }}" class="btn btn-secondary btn-sm" aria-label="Next page">
+            Next
+            {% render 'icon', name: 'arrow-right' %}
+          </a>
+        {%- endif -%}
+      </nav>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{%- endpaginate -%}

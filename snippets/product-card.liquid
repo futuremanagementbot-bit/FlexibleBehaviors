@@ -1,0 +1,53 @@
+{%- comment -%}
+  Product Card snippet
+  Usage: {% render 'product-card', product: product %}
+  Optional: show_badge: true (default true)
+{%- endcomment -%}
+
+{%- assign show_badge = show_badge | default: true -%}
+
+<article class="product-card fade-in-up" data-delay="{{ delay | default: 0 }}">
+  <a href="{{ product.url }}" class="product-card__image-wrap" aria-label="{{ product.title }}">
+    {%- if show_badge -%}
+      {%- if product.compare_at_price > product.price -%}
+        <span class="product-card__badge product-card__badge--sale">Sale</span>
+      {%- elsif product.tags contains 'new' -%}
+        <span class="product-card__badge product-card__badge--new">New</span>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if product.featured_image -%}
+      <img
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        alt="{{ product.featured_image.alt | default: product.title | escape }}"
+        width="600"
+        height="600"
+        loading="lazy"
+      >
+    {%- else -%}
+      <div class="skeleton skeleton--image"></div>
+    {%- endif -%}
+  </a>
+
+  <div class="product-card__body">
+    <h3 class="product-card__title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h3>
+
+    <div class="product-card__price">
+      {{ product.price | money }}
+      {%- if product.compare_at_price > product.price -%}
+        <span class="product-card__price--compare">{{ product.compare_at_price | money }}</span>
+      {%- endif -%}
+    </div>
+
+    <div class="product-card__action">
+      {%- form 'product', product -%}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" class="btn btn-primary btn-sm" aria-label="Add {{ product.title }} to toolkit">
+          Add to Toolkit
+        </button>
+      {%- endform -%}
+    </div>
+  </div>
+</article>

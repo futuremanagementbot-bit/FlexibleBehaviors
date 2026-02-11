@@ -1,0 +1,73 @@
+<!-- Trust / Value Proposition Bar -->
+<section class="section section--white" aria-label="Our promises">
+  <div class="container">
+    <div class="trust-bar">
+
+      <div class="trust-bar__item fade-in-up" data-delay="1">
+        <div class="trust-bar__icon">
+          {% render 'icon', name: 'truck' %}
+        </div>
+        <span class="trust-bar__text">{{ section.settings.item_1_text | default: 'Free shipping on orders over $35' }}</span>
+      </div>
+
+      <div class="trust-bar__item fade-in-up" data-delay="2">
+        <div class="trust-bar__icon">
+          {% render 'icon', name: 'heart' %}
+        </div>
+        <span class="trust-bar__text">{{ section.settings.item_2_text | default: 'Made with (and for) the special needs community' }}</span>
+      </div>
+
+      <div class="trust-bar__item fade-in-up" data-delay="3">
+        <div class="trust-bar__icon">
+          {% render 'icon', name: 'tag' %}
+        </div>
+        <span class="trust-bar__text">{{ section.settings.item_3_text | default: 'Budget-friendly, always' }}</span>
+      </div>
+
+      <div class="trust-bar__item fade-in-up" data-delay="4">
+        <div class="trust-bar__icon">
+          {% render 'icon', name: 'refresh' %}
+        </div>
+        <span class="trust-bar__text">{{ section.settings.item_4_text | default: 'Hassle-free returns' }}</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "item_1_text",
+      "label": "Item 1 text",
+      "default": "Free shipping on orders over $35"
+    },
+    {
+      "type": "text",
+      "id": "item_2_text",
+      "label": "Item 2 text",
+      "default": "Made with (and for) the special needs community"
+    },
+    {
+      "type": "text",
+      "id": "item_3_text",
+      "label": "Item 3 text",
+      "default": "Budget-friendly, always"
+    },
+    {
+      "type": "text",
+      "id": "item_4_text",
+      "label": "Item 4 text",
+      "default": "Hassle-free returns"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Bar"
+    }
+  ]
+}
+{% endschema %}
